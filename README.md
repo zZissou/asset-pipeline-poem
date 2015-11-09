@@ -55,12 +55,12 @@ The assets you want live in the following locations, inside of your rails applic
 Each directory has a specific use-case. The files you want are scattered across them. Your goal is to find all the files and require them in the correct order!
 
 ##Bonuses:
-Note that reset.css is being included using a CDN. It's a quick and dirty way of including it, but let's save it locally:
+Note that bootstrap.js is being included using a CDN. It's a quick and dirty way of including it, but let's save it locally:
 
-1. Find and copy the current reset.css url (see `views/layouts/application.html.erb`)
-2. `cd vendor/assets/stylesheets/`
-3. `curl -vs RESET_CSS_URL > reset.css`
-4. Finally, delete the old cdn link, and "require" the new reset in your `application.css` manifest.
+1. Find and copy the current bootstrap.js url (see `views/layouts/application.html.erb`)
+2. `cd vendor/assets/javascripts/`
+3. `curl -vs BOOTSTRAP_JS_URL > bootstrap.js`
+4. Finally, delete the old cdn link, and "require" the new bootstrap in your `application.js` manifest.
 
 ##Reading
 http://guides.rubyonrails.org/asset_pipeline.html
