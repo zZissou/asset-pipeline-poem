@@ -54,42 +54,6 @@ The assets you want live in the following locations, inside of your rails applic
 
 Each directory has a specific use-case. The files you want are scattered across them. Your goal is to find all the files and require them in the correct order!
 
-## Part 2. Precompilation
-Your solution should also work in production!
-
-First, we need to precompile our assets.
-```bash
-rake assets:precompile
-```
-
-After running `rake assets:precompile`, your concatenated/compressed assets will live in:
-
-    public/
-        assets/
-
-Next, we need to run our server in production:
-```
-SECRET_KEY_BASE=shhhh RAILS_SERVE_STATIC_FILES=true rails server -environment production
-```
-
-Now when you use "view source" in the chrome console, you should see one `application-12345.js` file, and one `application-abcde.css` file. That last bit is called a "fingerprint" and it's used for caching.
-
-Whenever you change a javascript or css file, you need to:
-
-1. precompile your assets again
-2. restart your server
-
-The fingerprint will change whenever the file changes. Use view-source to see it!
-
-When in doubt, start fresh:
-
-- Delete `tmp/cache/assets/`
-- Delete `public/assets/`
-- ( OR, you can just run: `rake assets:clobber` )
-- And restart your server!!!
-
----
-
 ##Bonuses:
 Note that reset.css is being included using a CDN. It's a quick and dirty way of including it, but let's save it locally:
 
