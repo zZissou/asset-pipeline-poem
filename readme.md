@@ -58,3 +58,8 @@ Each directory has a specific use case. The files you want are scattered across 
   * From the Terminal, run `curl -vs BOOTSTRAP_CSS_URL_YOU_COPIED > vendor/assets/stylesheets/bootstrap.min.css`
   * Finally, delete the CDN link from `application.html.erb`, and `require` the new Bootstrap CSS file in your `application.css` manifest.
   * Repeat these steps for the Bootstrap JavaScript library.
+  * Precompile your assets.
+
+2. Downloading the Bootstrap CSS and JavaScript files isn't the only way to use Bootstrap with the Rails asset pipeline! You can also use the <a href="https://github.com/twbs/bootstrap-sass" target="_blank">bootstrap-sass gem</a>.
+  * In `application.css` and `application.js`, remove the `require` statements for Bootstrap, and use the bootstrap-sass gem instead (follow the <a href="https://github.com/twbs/bootstrap-sass#a-ruby-on-rails" target="_blank">installation steps</a> in the docs).
+  * After installing bootstrap-sass, precompile your assets again.
