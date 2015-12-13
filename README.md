@@ -15,59 +15,53 @@
 - Browser Caching
 - MD5 fingerprint
 
-###Instructions:
+##Instructions:
+Your goal is to reconstruct a simple poem.
 
-* **This rails app does not have a database.**
-* Your goal is to reconstruct a simple poem
-* DO NOT modify any files, you are only allowed to "require" them in the manifest.
-* When you precompile your javascript assets, they should all appear in application.js
-* Your solution should work in production:
-    - `rails server --environment=production`
+- Clone this repo
+    + Note that this rails app does not have a database.
+- Run your server and open "/". You should see a jumbled poem.
 
-###The Asset Pipeline
-Assets live in the following locations, inside of your rails application directory:
+When you're done make changes, the homepage should look like this (with the poem in the correct order and styled correctly):
 
-    app/
+![solution](solution_screenshot.png)
+
+#### Rules
+* You are not allowed to modify any files.
+* You are only allowed to update the manifests in:
+    * `app/assets/javascripts/application.js`
+        - e.g. `//= require roses-are-red`
+    * `app/assets/stylesheets/application.css`
+        - e.g. `*= require layout`
+* Try not to use `require_tree .` anywhere.
+
+## Part 1. Using the Asset Pipeline
+The assets you want live in the following locations, inside of your rails application directory:
+
+    app/                    # application specific code
         assets/
             images/
             javascripts/
             stylesheets/
-    lib/
+    lib/                    # custom libraries
         assets/
             javascripts/
             stylesheets/
-    vendor/
+    vendor/                 # third party libraries
         assets/
             javascripts/
             stylesheets/
 
-Each directory has a specific use-case. Do you know which is which?
+Each directory has a specific use-case. The files you want are scattered across them. Your goal is to find all the files and require them in the correct order!
 
-After running `RAILS_ENV=development rake assets:precompile`, your concatenated/compressed assets will live in:
+##Bonuses:
+Note that bootstrap.js is being included using a CDN. It's a quick and dirty way of including it, but let's save it locally:
 
-    public/
-        assets/
+1. Find and copy the current bootstrap.js url (see `views/layouts/application.html.erb`)
+2. `cd vendor/assets/javascripts/`
+3. `curl -vs BOOTSTRAP_JS_URL > bootstrap.js`
+4. Finally, delete the old cdn link, and "require" the new bootstrap in your `application.js` manifest.
 
-When in doubt, start fresh:
-
-- Delete `tmp/cache/assets/`
-- Delete `public/assets/`
-- ( OR, you can just run: `RAILS_ENV=development rake assets:clobber` )
-- Restart your Server
-
----
-
-###Additional Goals:
-1. There's a nifty little library I've written for calculating word counts and character counts called "poem_meta_data" (see `/lib`). Include it.
-2. Note that reset.css is being included using a CDN. It's a quick and dirty way of including it, but let's save it locally:
-    + `touch reset.css`
-    + `curl -vs URL_OF_CSS_FILE > reset.css`
-    + Then, delete the old cdn link, and "require" the new reset. (Where are you going to put it?)
-
-When you're done it should look like this:
-
-![goal](goal_screenshot.png)
-
-####Reading
+##Reading
 http://guides.rubyonrails.org/asset_pipeline.html
 https://github.com/rails/sprockets#sprockets-directives

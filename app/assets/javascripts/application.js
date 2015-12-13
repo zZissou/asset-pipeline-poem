@@ -12,15 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-
 //= require title
-//= require roses-are-red
-//= require violets-are-blue
-//= require compile-your-assets
-//= require then-hit-opt-cmd-u
+//= require roses_are_red
+//= require violets_are_blue
+//= require compile_your_assets
+//= require then_hit_opt_cmd_u
 //= require poem_meta_data
-
-
-
-
+//= require_tree .
