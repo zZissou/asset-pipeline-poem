@@ -24,7 +24,7 @@ Your goal is to reconstruct a simple poem.
 
 When you're done make changes, the homepage should look like this (with the poem in the correct order and styled correctly):
 
-![goal](goal_screenshot.png)
+![solution](solution_screenshot.png)
 
 #### Rules
 * You are not allowed to modify any files.
