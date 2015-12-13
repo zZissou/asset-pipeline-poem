@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require normalize
+ *= require bootstrap.min
  *= require layout
  *= require poem_format
  *= require poem_meta_data

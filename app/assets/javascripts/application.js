@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require title
 //= require roses_are_red
 //= require violets_are_blue
