@@ -69,7 +69,7 @@ After running `rake assets:precompile`, your concatenated/compressed assets will
 
 Next, we need to run our server in production:
 ```
-SECRET_KEY_BASE=shhhh RAILS_SERVE_STATIC_FILES=true rails server -environment production
+SECRET_KEY_BASE=shhhh RAILS_SERVE_STATIC_FILES=true rails server -e production
 ```
 
 Now when you use "view source" in the chrome console, you should see one `application-12345.js` file, and one `application-abcde.css` file. That last bit is called a "fingerprint" and it's used for caching.
