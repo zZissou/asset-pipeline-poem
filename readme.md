@@ -5,17 +5,17 @@
 **Terms:**
 
 * Manifest
-* Pre/compilation
+* Precompilation
 * Concatenation
 * Compression / Minification
 * Browser Caching
 * MD5 fingerprint
 
-## Instructions
+## Part 1: Ode to the Asset Pipeline
 
 Your goal is to reconstruct a simple poem. To get started:
 
-* Clone this repo.
+* Clone this repo, and take any steps necessary to get the app running on your computer.
   * Note that this Rails app doesn't have a database.
 * Start your server, and navigate to `localhost:3000` in the browser. You should see a jumbled poem.
 
@@ -30,7 +30,7 @@ The poem should eventually look like this when you're done making changes:
 
 #### Using the Asset Pipeline
 
-The assets you want to require live in the following locations, inside of your Rails application directory:
+The assets you need require will live somewhere in the following locations, inside of your Rails application directory:
 
 ```
 app/                   # application specific code
@@ -50,9 +50,9 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
-## Bonus
+## Part 2: Using Third-Party Code
 
-1. Note that the Bootstrap CSS and JavaScript libraries are included using a CDN. Practice requiring the files through the asset pipeline instead:
+1. Note that the Bootstrap CSS and JavaScript libraries are included in `views/layouts/application.html.erb` using CDN links. Practice requiring the files through the asset pipeline instead:
 
   * Find and copy the current `bootstrap.css` URL (see `views/layouts/application.html.erb`).
   * From the Terminal, run `curl -vs BOOTSTRAP_CSS_URL_YOU_COPIED > vendor/assets/stylesheets/bootstrap.min.css`
@@ -60,6 +60,10 @@ Each directory has a specific use case. The files you want are scattered across 
   * Repeat these steps for the Bootstrap JavaScript library.
   * Precompile your assets.
 
-2. Downloading the Bootstrap CSS and JavaScript files isn't the only way to use Bootstrap with the Rails asset pipeline! You can also use the <a href="https://github.com/twbs/bootstrap-sass" target="_blank">bootstrap-sass gem</a>.
+ > You can also use the front-end package manager Bower to download and install library files.
+ 
+2. Downloading the Bootstrap CSS and JavaScript files isn't the only way to use Bootstrap with the Rails asset pipeline! You can also use the <a href="https://github.com/twbs/bootstrap-sass" target="_blank">bootstrap-sass gem</a>.  
   * In `application.css` and `application.js`, remove the `require` statements for Bootstrap, and use the bootstrap-sass gem instead (follow the <a href="https://github.com/twbs/bootstrap-sass#a-ruby-on-rails" target="_blank">installation steps</a> in the docs).
   * After installing bootstrap-sass, precompile your assets again.
+
+ > It's often easier to use a well-documented gem than to to work directly with the asset pipeline. Watch out for gems that haven't been updated in a while, though, or for bad interactions among gems.
