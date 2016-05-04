@@ -50,6 +50,8 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
+A solution for part one is in the [solution branch](https://github.com/sf-wdi-27-28/asset_pipeline_poem/tree/solution).
+
 ## Part 2: Using Third-Party Code
 
 1. Note that the Bootstrap CSS and JavaScript libraries are included in `views/layouts/application.html.erb` using CDN links. Practice requiring the files through the asset pipeline instead:
@@ -59,6 +61,7 @@ Each directory has a specific use case. The files you want are scattered across 
   * Finally, delete the CDN link from `application.html.erb`, and `require` the new Bootstrap CSS file in your `application.css` manifest.
   * Repeat these steps for the Bootstrap JavaScript library.
   * Precompile your assets.
+  
 
  > You can also use the front-end package manager Bower to download and install library files.
  
@@ -66,4 +69,7 @@ Each directory has a specific use case. The files you want are scattered across 
   * In `application.css` and `application.js`, remove the `require` statements for Bootstrap, and use the bootstrap-sass gem instead (follow the <a href="https://github.com/twbs/bootstrap-sass#a-ruby-on-rails" target="_blank">installation steps</a> in the docs).
   * After installing bootstrap-sass, precompile your assets again.
 
+
  > It's often easier to use a well-documented gem than to to work directly with the asset pipeline. Watch out for gems that haven't been updated in a while, though, or for bad interactions among gems.
+ 
+ A solution for part two is in the [solution_bootstrap_sass branch](https://github.com/sf-wdi-27-28/asset_pipeline_poem/tree/solution_bootstrap_sass).
