@@ -1,0 +1,10 @@
+$(document).on('ready', function(){
+
+  $('body').append('<h1>Asset Pipeline Poem</h1>');
+  $('h1').on('click', function(){
+    console.log('sanity check: title clicked');
+    $('img').attr({ src: "<%= asset_path('ruby.jpg') %>" });
+  });
+
+
+});
