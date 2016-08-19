@@ -50,7 +50,7 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
-A solution is in the [solution branch](https://github.com/sf-wdi-27-28/asset_pipeline_poem/tree/solution).
+A solution is in the [solution branch](https://github.com/sf-wdi-30/asset_pipeline_poem/tree/solution).
 
 ## Bonus: Using Third-Party Code
 
