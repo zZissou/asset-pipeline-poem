@@ -72,4 +72,4 @@ A solution is in the [solution branch](https://github.com/sf-wdi-30/asset_pipeli
 
  > It's often easier to use a well-documented gem than to to work directly with the asset pipeline. Watch out for gems that haven't been updated in a while, though, or for bad interactions among gems.
 
- A solution for this bonus is in the [solution_bootstrap_sass branch](https://github.com/sf-wdi-27-28/asset_pipeline_poem/tree/solution_bootstrap_sass).
+ A solution for this bonus is in the [solution_bootstrap_sass branch](https://github.com/sf-wdi-30/asset_pipeline_poem/tree/solution_bootstrap_sass).
