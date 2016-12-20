@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//
+//= require title.js
+//= require roses_are_red.js
+//= require violets_are_blue.js
+//= require compile_your_assets.js
+//= require then_hit_opt_cmd_u.js
+//= require poem_meta_data.js
 //= require_tree .
